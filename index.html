@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/index.css">
+  <link rel="stylesheet" href="./styles/app.css">
   <title>Document</title>
 </head>
 
@@ -14,11 +14,19 @@
     <h1>CatApp</h1>
   </header>
   <main>
-    <article class="images-random">
-      Cat Image
+    <article class="images-random-container">
+      <img id="random-cat" alt="CatImage" height="300px">
     </article>
   </main>
-  <script src="/index.js"></script>
+
+  <section class="button-stack">
+
+    <button id="uploadButton">upload</button><button id="addFavorite">add to favorites</button>
+  </section>
+  <article class="containerFavourites">
+    <h2>Fav Cats</h2>
+  </article>
+  <script src="./src/main.js"></script>
 </body>
 
 </html>
