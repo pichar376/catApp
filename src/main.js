@@ -49,19 +49,32 @@ async function getCatFavourites() {
 
   const $containerFav = document.querySelector(".containerFavourites");
   $containerFav.innerHTML = "";
+  const $h2 = document.createElement("h2")
+  const $divCardImage = document.createElement("div")
+  const $section = document.createElement("section");
   const $h2Text = document.createTextNode("Fav Cat");
+  $divCardImage.classList.add("row")
+  $h2.appendChild($h2Text)
+  $section.append($h2)
+
+
 
   favourites.forEach((img) => {
-    const $article = document.createElement("article")
-    const $button = document.createElement("button")
+    const $article = document.createElement("article");
+    const $button = document.createElement("button");
+    $button.classList.add("buttonDelete")
     const $img = document.createElement("img");
-    const textButton = document.createTextNode("Delete Favourites");
-    $button.appendChild(textButton)
-    $img.setAttribute("src", img.image.url)
-    $img.classList.add('imgFavourites')
-    $article.appendChild($img)
-    $article.appendChild($button)
-    $article.classList.add("dFlex")
+    const textButton = document.createTextNode("Delete To Favourites");
+    $button.appendChild(textButton);
+    $img.setAttribute("src", img.image.url);
+    $img.classList.add("card-img-top")
+    $img.classList.add("object-fit-cover")
+    $img.classList.add('imgFavourites');
+    $article.appendChild($img);
+    $article.appendChild($button);
+    $article.classList.add("col-md-6");
+    $article.classList.add("col-lg-4");
+    $article.classList.add("col-xl-3");
 
     $button.addEventListener("click", (e) => {
       console.log(img)
@@ -69,7 +82,8 @@ async function getCatFavourites() {
     })
 
 
-    $containerFav.appendChild($article)
+    $divCardImage.appendChild($article)
+    $containerFav.appendChild($divCardImage)
   })
 }
 
@@ -100,14 +114,15 @@ document.addEventListener("click", (e) => {
   if (e.target.id === "addFavorite") {
     addFavorite(currentId)
   }
+  if (e.target.id === "upLoadButton") {
+    getCat(baseUrl)
+  }
 }
-
 
 )
 getCat(baseUrl)
 
 getCatFavourites()
-
 
 
 
