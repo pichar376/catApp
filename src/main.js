@@ -4,12 +4,11 @@ const baseUrl = " https://api.thecatapi.com/v1/images/search";
 const apiKey = "live_kHlMnewgDaKf4Qe0FgbsCMVfSgi2RdIGJsxagSuCVje7Z8PT2YkVH1912f34BKUl"
 
 const deleteUrl = (id) => `https://api.thecatapi.com/v1/images/${id}`
-
-
-
 const urlFavAdd = "https://api.thecatapi.com/v1/favourites"
 const $uploadButton = document.getElementById("uplodadButton")
 const $randomCat = document.getElementById("random-cat")
+
+// initial state of the current payload of the element used in the getCat function
 let currentId = ""
 
 async function getCat() {
@@ -49,20 +48,13 @@ async function getCatFavourites() {
 
   const $containerFav = document.querySelector(".containerFavourites");
   $containerFav.innerHTML = "";
-  const $h2 = document.createElement("h2")
   const $divCardImage = document.createElement("div")
-  const $section = document.createElement("section");
-  const $h2Text = document.createTextNode("Fav Cat");
-  $divCardImage.classList.add("row")
-  $h2.appendChild($h2Text)
-  $section.append($h2)
-
-
+  $divCardImage.classList.add("row");
 
   favourites.forEach((img) => {
     const $article = document.createElement("article");
     const $button = document.createElement("button");
-    $button.classList.add("buttonDelete")
+    $button.classList.add("btn", "btn-light")
     const $img = document.createElement("img");
     const textButton = document.createTextNode("Delete To Favourites");
     $button.appendChild(textButton);
@@ -77,16 +69,13 @@ async function getCatFavourites() {
     $article.classList.add("col-xl-3");
 
     $button.addEventListener("click", (e) => {
-      console.log(img)
       deleteFavourites(img.id)
     })
-
-
     $divCardImage.appendChild($article)
     $containerFav.appendChild($divCardImage)
+    $containerFav.classList.add("container-fav")
   })
 }
-
 async function deleteFavourites(id) {
   const response = await fetch(`https://api.thecatapi.com/v1/favourites/${id}`, {
     method: 'DELETE',
@@ -100,34 +89,24 @@ async function deleteFavourites(id) {
 
 }
 
-
-
-
-
-
-
+//event delegation with addEvent Direct listener to document
 document.addEventListener("click", (e) => {
   if (e.target.id === "uploadButton") {
     getCat(baseUrl)
   }
-
   if (e.target.id === "addFavorite") {
+    $textAddFav.classList.add("--fade-in-add")
     addFavorite(currentId)
+    setTimeout(() => {
+      $textAddFav.classList.remove("--fade-in-add")
+    }, 1500);
   }
   if (e.target.id === "upLoadButton") {
     getCat(baseUrl)
   }
 }
-
 )
+
 getCat(baseUrl)
 
 getCatFavourites()
-
-
-
-
-
-
-
-

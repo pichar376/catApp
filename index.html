@@ -16,7 +16,7 @@
 
     <nav class="navbar navbar-expand-lg bg-dark text-white" id="container-nav">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#home">Navbar</a>
+        <a class="navbar-brand" href="#home">Cat App</a>
         <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse"
           data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
           aria-label="Toggle navigation">
@@ -28,7 +28,7 @@
               <a class="nav-link active" aria-current="page" href="#home">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#favourites">Favourite Cats</a>
+              <a class="nav-link" id="fav-link" href="#favourites">Favourite Cats</a>
             </li>
             <li class="nav-item dropdown">
           </ul>
@@ -43,35 +43,25 @@
 
     <section class="button-stack">
 
-      <button id="upLoadButton" type="button" class="btn btn-outline-secondary">upload</button><button id="addFavorite"
-        type="button" class="btn btn-outline-secondary inactive">Add To Favourites</button>
+      <button id="upLoadButton" type="button" class="btn btn-outline-secondary">upload</button>
+      <button id="addFavorite" type="button" class="btn btn-outline-secondary inactive">Add To
+        Favourites</button>
     </section>
-    <section class="titleFav">
-      <h2>Favourites Cats</h2>
-    </section>
+    <h2 class="text-added-to-avourites">Image save to favourites</h2>
+    <h2 class="title-fav">favourites Cats</h2>
     <article class="containerFavourites container">
     </article>
   </main>
-  <footer class="bg-dark">
-    <div class="container">
-      <div class="row main-footer">
-        <div class="col developed">
-          <h6>Developed by Ernesto Pichardo</h6>
-        </div>
-        <div class="col github">
-          <a href="https://github.com/pichar376" class="git-ancord ml-auto">my github site</a>
-        </div>
-      </div>
-    </div>
-  </footer>
   </div>
+  <footer class="bg-dark container">
+    <p>Developed Ernesto Pichardo</p>
+  </footer>
   <script src="./src/main.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
     crossorigin="anonymous"></script>
   <script src="./src/nodes.js"></script>
   <script src="./src/routes/routes.js"></script>
-
 </body>
 
 </html>

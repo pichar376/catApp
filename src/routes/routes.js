@@ -20,7 +20,8 @@ const pageFav = () => {
   $containerImagesRandom.classList.add("inactive");
   $buttonUpload.classList.add("inactive");
   $buttonAddFav.classList.add("inactive");
-  $container.classList.remove("--containerHome")
+  $container.classList.remove("--containerHome");
+  $titleFav.classList.remove('inactive');
 };
 
 const homePage = () => {
