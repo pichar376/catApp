@@ -16,6 +16,13 @@ body {
   min-height: 100vh;
   background-color: #eee;
 }
+
+.main {
+  margin: 0 auto;
+  width: 100%;
+  min-width: 288px;
+  max-width: 900px;
+}
 #title {
   color: #00000075;
 }
@@ -37,8 +44,8 @@ body {
 }
 
 .random-container img {
-  width: 400px;
-  height: 400px;
+  min-width: 250px;
+  max-width: 400px;
 }
 
 .containerImgFavourites {
@@ -111,9 +118,6 @@ footer {
   line-height: 4rem;
   color: white;
 }
-.github a {
-  text-decoration: none;
-}
 
 .container-fav {
   margin-bottom: 4rem;
@@ -147,4 +151,8 @@ footer {
 
 .title-fav {
   text-align: center;
+}
+
+.button-stack button {
+  width: 10rem !important;
 }
