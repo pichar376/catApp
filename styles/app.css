@@ -43,9 +43,9 @@ body {
   margin: 2rem auto;
 }
 
-.random-container img {
-  min-width: 250px;
-  max-width: 400px;
+.images-random-container img {
+  width: 250px;
+  object-fit: cover;
 }
 
 .containerImgFavourites {
